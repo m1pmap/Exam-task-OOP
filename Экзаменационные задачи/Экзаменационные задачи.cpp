@@ -1,5 +1,9 @@
 ﻿#include <iostream>
 #include <vector>
+#include <deque>
+#include <forward_list>
+#include <list>
+#include <array>
 
 using namespace std;
 
@@ -384,3 +388,209 @@ using namespace std;
 //	for (int i = 0; i < n; i++)
 //		cout << container[i] << " ";
 //}
+
+
+
+
+//10.Контейнер двухсторонняя очередь. Создать два контейнера, инициализировать при создании. 
+//Заменить все значения первого контейнера на максимальный элемент, 
+//второго — на минимальный. Обменять значениями две очереди.
+
+//void PrintDeque(deque<int> dq)
+//{
+//	for (int i = 0; i < dq.size(); i++)
+//		cout << dq[i] << " ";
+//	cout << endl;
+//}
+//
+//int main()
+//{
+//	deque<int> firstDq = { 1, 2, 3, 4, 5 };
+//	deque<int> secondDq = firstDq;
+//
+//	int max = 0;
+//	int min = 100;
+//
+//	cout << "First / second deque: ";
+//	PrintDeque(firstDq);
+//
+//	for (int i = 0; i < firstDq.size(); i++)
+//	{
+//		if (max < firstDq[i])
+//			max = firstDq[i];
+//		if (min > firstDq[i])
+//			min = firstDq[i];
+//	}
+//
+//	for (int i = 0; i < firstDq.size(); i++)
+//	{
+//		firstDq[i] = max;
+//		secondDq[i] = min;
+//	}
+//
+//	cout << "\nAfter task:" << endl;
+//	PrintDeque(firstDq);
+//	PrintDeque(secondDq);
+//
+//	swap(firstDq, secondDq);
+//
+//	cout << "\nAfter swap:" << endl;
+//	PrintDeque(firstDq);
+//	PrintDeque(secondDq);
+//}
+
+
+
+
+//11.Контейнер односвязный список.  Создать, заполнить его n элементами целого типа. 
+//Уменьшить размер списка на k позиций. Вставить в односвязный список элемент k на позицию m.
+
+//void PrintList(forward_list<int> fList)
+//{
+//	for (auto i : fList)
+//		cout << i << " ";
+//}
+//
+//int main()
+//{
+//	forward_list<int> container;
+//	int n;
+//
+//	cout << "Please, enter number of elements: "; cin >> n;
+//	for (int i = 0; i < n; i++)
+//		container.push_front(rand() % 10);
+//
+//	PrintList(container);
+//
+//	int k;
+//	cout << "\nInput k: "; cin >> k;
+//
+//	for (int i = 0; i < k; i++)
+//		container.pop_front();
+//
+//	PrintList(container);
+//
+//	int m;
+//	cout << "\nInput m: "; cin >> m;
+//
+//	forward_list<int>::iterator it = container.begin();
+//	advance(it, m);
+//	container.insert_after(it, k);
+//
+//	PrintList(container);
+//}
+
+
+
+
+//12.Контейнер односвязный список.  Создать, заполнить его n элементами целого типа.
+//Заменить все значения контейнера, меньшие n на максимальный элемент контейнера, 
+//а большие n — на минимальный элемент контейнера.
+
+//void PrintList(forward_list<int> fList)
+//{
+//	for (auto i : fList)
+//		cout << i << " ";
+//	cout << endl;
+//}
+//
+//int main()
+//{
+//	forward_list<int> container;
+//	int n;
+//	cout << "Please, input n: "; cin >> n;
+//
+//	int max = 0;
+//	int min = 10;
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		int randomValue = rand() % 10;
+//		container.push_front(randomValue);
+//		if (max < randomValue)
+//			max = randomValue;
+//		if (min > randomValue)
+//			min = randomValue;
+//	}
+//
+//	PrintList(container);
+//
+//	for (forward_list<int>::iterator it = container.begin(); it != container.end(); ++it)
+//	{
+//		if (*(it) < n)
+//			*(it) = max;
+//		else
+//			*(it) = min;
+//	}
+//
+//	PrintList(container);
+//}
+
+
+
+
+//13.Контейнер двухсвязный список, создать, заполнить его n элементами целого типа. 
+//Вывести размер списка. Заменить элементы контейнера в диапазоне n/2… n  на значение максимального элемента контейнера.
+
+//void PrintList(list<int> list)
+//{
+//	for (auto i : list)
+//		cout << i << " ";
+//	cout << endl;
+//}
+//
+//int main()
+//{
+//	list<int> container;
+//	int n;
+//	cout << "Please, input n: "; cin >> n;
+//
+//	int max = 0;
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		int randoValue = rand() % 10;
+//		container.push_back(randoValue);
+//
+//		if (max < randoValue)
+//			max = randoValue;
+//	}
+//
+//	PrintList(container);
+//	
+//	list<int>::iterator it = container.begin();
+//	advance(it, n / 2);
+//
+//	for (it; it != container.end(); ++it)
+//		*(it) = max;
+//
+//	PrintList(container);
+//}
+
+
+
+
+//14.Контейнер массив фиксированного размера. Создать два контейнера. 
+//Первый инициализировать при создании элементами строкового типа, второму 
+//массиву присвоить значения первого. Присвоить всем элементам первого контейнера значение «Экзамен». 
+
+void PrintArray(array<string, 3> array)
+{
+	for (auto i : array)
+		cout << i << " ";
+	cout << endl;
+}
+
+int main()
+{
+	array<string, 3> firstCont = { "school", "iniversity", "office" };
+	array<string, 3> secondCont = firstCont;
+
+	cout << "First / second containers: ";
+	PrintArray(secondCont);
+
+	for (int i = 0; i < firstCont.size(); i++)
+		firstCont[i] = "exam";
+
+	cout << "First container after task: ";  PrintArray(firstCont);
+}
