@@ -4,6 +4,10 @@
 #include <forward_list>
 #include <list>
 #include <array>
+#include <stack>
+#include <queue>
+#include <set>
+#include <map>
 
 using namespace std;
 
@@ -574,23 +578,274 @@ using namespace std;
 //Первый инициализировать при создании элементами строкового типа, второму 
 //массиву присвоить значения первого. Присвоить всем элементам первого контейнера значение «Экзамен». 
 
-void PrintArray(array<string, 3> array)
-{
-	for (auto i : array)
-		cout << i << " ";
-	cout << endl;
-}
+//void PrintArray(array<string, 3> array)
+//{
+//	for (auto i : array)
+//		cout << i << " ";
+//	cout << endl;
+//}
+//
+//int main()
+//{
+//	array<string, 3> firstCont = { "school", "iniversity", "office" };
+//	array<string, 3> secondCont = firstCont;
+//
+//	cout << "First / second containers: ";
+//	PrintArray(secondCont);
+//
+//	for (int i = 0; i < firstCont.size(); i++)
+//		firstCont[i] = "exam";
+//
+//	cout << "First container after task: ";
+//	PrintArray(firstCont);
+//}
 
-int main()
-{
-	array<string, 3> firstCont = { "school", "iniversity", "office" };
-	array<string, 3> secondCont = firstCont;
 
-	cout << "First / second containers: ";
-	PrintArray(secondCont);
 
-	for (int i = 0; i < firstCont.size(); i++)
-		firstCont[i] = "exam";
 
-	cout << "First container after task: ";  PrintArray(firstCont);
-}
+//15.Адаптер контейнера стек. Создать, заполнить его n элементами целого типа. 
+//Выполнить последовательно действия: добавить элемент в стек, удалить 2 элемента 
+//из стека, вывести размер и элементы стека. 
+
+//void PrintVector(vector<int> v)
+//{
+//	for (auto i : v)
+//		cout << i << " ";
+//	cout << endl;
+//}
+//
+//int main()
+//{
+//	stack<int, vector<int>> container;
+//	int n;
+//	cout << "Please, input n: "; cin >> n;
+//
+//	for (int i = 0; i < n; i++)
+//		container.push(rand() % 10);
+//
+//	auto vector = container._Get_container();
+//	PrintVector(vector);
+//
+//	for (int i = 0; i < 2; i++)
+//		container.pop();
+//
+//	vector = container._Get_container();
+//	cout << "Size: " << container.size() << "\nStack: ";
+//	PrintVector(vector);
+//}
+
+
+
+
+//16.Адаптер контейнера очередь. Создать, заполнить его n элементами целого типа. 
+//Выполнить последовательно действия: добавить 7 элемент в очередь, удалить элемент 
+//из очереди, вывести последний элемент очереди. 
+
+//void PrintDeque(deque<int> dq)
+//{
+//	for (int i = 0; i < dq.size(); ++i)
+//		cout << i + 1 << ". " << dq[i] << endl;
+//}
+//
+//int main()
+//{
+//	queue<int> container;
+//	int n;
+//	cout << "Please, enter n(n > 5): "; cin >> n;
+//
+//	try
+//	{
+//		if (n <= 5)
+//			throw exception("n should be more than 5!");
+//
+//		for (int i = 0; i < n; i++)
+//		{
+//			container.push(rand() % 10);
+//			cout << i + 1 << ". " << container.back() << endl;
+//		}
+//
+//		//adding element
+//		auto dq = container._Get_container();
+//		deque<int>::iterator it = dq.begin();
+//		advance(it, 6);
+//		dq.insert(it, rand() % 10);
+//
+//		while (!container.empty())
+//			container.pop();
+//
+//		for (int i = 0; i < dq.size(); ++i)
+//			container.push(dq[i]);
+//
+//		cout << "Result after add: " << endl;
+//		PrintDeque(dq);
+//
+//		//deleting element
+//		container.pop();
+//		dq = container._Get_container();
+//		cout << "Result after delete: " << endl;
+//		PrintDeque(dq);
+//
+//		cout << "Back element: " << container.back();  //back element
+//	}
+//	catch (exception e)
+//	{
+//		cout << e.what();
+//	}
+//}
+
+
+
+
+//17.Контейнер Set. Создать, заполнить не менее, чем 10 элементами 
+//строкового типа. Вывести на экран. Вычислить размер.
+
+//int main()
+//{
+//	set<string> container = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
+//
+//	cout << "Set: ";
+//	for (string i : container)
+//		cout << i << " ";
+//
+//	cout << "\nSize: " << container.size();
+//}
+
+
+
+
+//18.Контейнер map. Создать (ключ-строковое значение, значение-целое).
+//Заменить первое и последние элементы на [cдал,9], [не сдал, 3]. Найти индекс элемента по ключу. 
+
+//int main()
+//{
+//	map<string, int> container;
+//
+//	container.emplace("a", 1);
+//	container.emplace("b", 2);
+//	container.emplace("c", 3);
+//	container.emplace("d", 4);
+//	container.emplace("e", 5);
+//
+//	container.erase(container.begin());	
+//	container.erase(prev(container.end()));
+//
+//	container.emplace("passed", 9);
+//	container.emplace("didn't pass", 3);
+//
+//	cout << container["passed"];
+//}
+
+
+
+
+//19.Контейнер вектор. Создать, заполнить n случайными элементами целого типа (от 0 до 100). \
+При помощи алгоритма переставить элементы в обратном порядке.  Заменить все числа больше 40 на 0.
+
+//void PrintVector(vector<int> v)
+//{
+//	for (auto i : v)
+//		cout << i << " ";
+//	cout << endl;
+//}
+//
+//int main()
+//{
+//	vector<int> container;
+//
+//	int n;
+//	cout << "Please, enter n: "; cin >> n;
+//
+//	for (int i = 0; i < n; ++i)
+//	{
+//		container.push_back(rand() % 100);
+//		cout << container[i] << " ";
+//	}
+//	cout << endl;
+//
+//	reverse(container.begin(), container.end());
+//	PrintVector(container);
+//
+//	for (int i = 0; i < n; ++i)
+//		if (container[i] > 40)
+//			container[i] = 0;
+//
+//	PrintVector(container);
+//}
+
+
+
+
+//20.Контейнер вектор. Создать, заполнить n случайными элементами целого типа (от 0 до 100). 
+//При помощи алгоритма отсортировать значения вектора. Поменять местами максимальный и минимальный элемент.
+
+//void PrintVector(vector<int> v)
+//{
+//	for (auto i : v)
+//		cout << i << " ";
+//	cout << endl;
+//}
+//
+//int main()
+//{
+//	vector<int> container;
+//
+//	int n;
+//	cout << "Please, enter n: "; cin >> n;
+//
+//	for (int i = 0; i < n; ++i)
+//	{
+//		container.push_back(rand() % 100);
+//		cout << container[i] << " ";
+//	}
+//	cout << endl;
+//
+//	sort(container.begin(), container.end());
+//	PrintVector(container);
+//
+//	swap(container[0], container[n - 1]);
+//	PrintVector(container);
+//}
+
+
+
+
+//21.Контейнер двунаправленная очередь. Удалить все элементы очереди, расположенные 
+//между первым и вторым отрицательным элементом (не включая сами отрицательные элементы).
+
+//int main()
+//{
+//	deque<int> container;
+//
+//	int n;
+//	cout << "Please, enter n: "; cin >> n;
+//
+//	int i_start, i_finish, count = 0;
+//
+//	for (int i = 0; i < n; ++i)
+//	{
+//		container.push_back(rand() % 10 - 3);
+//		cout << container[i] << " ";
+//		if (container[i] < 0 && count == 0)
+//		{
+//			count++;
+//			i_start = i;
+//		}
+//		else
+//			if (container[i] < 0 && count == 1)
+//			{
+//				count++;
+//				i_finish = i;
+//			}
+//	}
+//	cout << endl;
+//
+//	auto start = container.begin();
+//	auto finish = start;
+//
+//	advance(start, i_start + 1);
+//	advance(finish, i_finish);
+//
+//	container.erase(start, finish);
+//	for (auto i : container)
+//		cout << i << " ";
+//}
