@@ -1,0 +1,15 @@
+Name: team1
+City: city1
+Players: 10
+Points: 20
+
+Name: team2
+City: city2
+Players: 10
+Points: 40
+
+Name: team3
+City: city3
+Players: 10
+Points: 15
+

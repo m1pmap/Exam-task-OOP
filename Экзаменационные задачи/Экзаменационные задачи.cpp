@@ -8,6 +8,10 @@
 #include <queue>
 #include <set>
 #include <map>
+#include <fstream>
+#include <string>
+#include <regex>
+
 
 using namespace std;
 
@@ -849,3 +853,266 @@ using namespace std;
 //	for (auto i : container)
 //		cout << i << " ";
 //}
+
+
+
+
+//22.Создайте файл из элементов типа «Спортивная команда» (название, 
+//город, количество игроков, количество набранных очков) и выведите его на экран.
+
+//class SportTeam
+//{
+//	string name;
+//	string city;
+//	int playersNum;
+//	int points;
+//public:
+//	SportTeam(string name, string city, int playersNum, int points)
+//	{
+//		this->name = name;
+//		this->city = city;
+//		this->playersNum = playersNum;
+//		this->points = points;
+//	}
+//
+//	string getName()
+//	{
+//		return this->name;
+//	}
+//	string getCity()
+//	{
+//		return this->city;
+//	}
+//	int getPlayersNum()
+//	{
+//		return this->playersNum;
+//	}
+//	int getPoints()
+//	{
+//		return this->points;
+//	}
+//};
+//
+//
+//int main()
+//{
+//	SportTeam team1("team1", "city1", 10, 20);
+//	SportTeam team2("team2", "city2", 10, 40);
+//	SportTeam team3("team3", "city3", 10, 15);
+//
+//	ofstream file("sportTeam.txt");
+//
+//	vector<SportTeam> vector = { team1 , team2, team3 };
+//
+//	for (int i = 0; i < vector.size(); ++i)
+//	{
+//		file << "Name: " << vector[i].getName() << endl
+//			<< "City: " << vector[i].getCity() << endl
+//			<< "Players: " << vector[i].getPlayersNum() << endl
+//			<< "Points: " << vector[i].getPoints() << endl << endl;
+//	}
+//
+//	file.close();
+//
+//	ifstream readFile("sportTeam.txt");
+//	string line;
+//
+//	if (readFile.is_open())
+//		while (getline(readFile, line))
+//			cout << line << endl;
+// 
+//	readFile.close();
+//}
+
+
+
+
+//23.Создайте файл из элементов типа «Стадион» (название, адрес, вместимость, виды спорта) и выведите его на экран.
+
+//class Stadium
+//{
+//	string name;
+//	string addres;
+//	int capacity;
+//	string typeOfSport;
+//public:
+//	Stadium(string name, string addres, int capacity, string typeOfSport)
+//	{
+//		this->name = name;
+//		this->addres = addres;
+//		this->capacity = capacity;
+//		this->typeOfSport = typeOfSport;
+//	}
+//
+//	string getName()
+//	{
+//		return this->name;
+//	}
+//	string getAddres()
+//	{
+//		return this->addres;
+//	}
+//	int getCapacity()
+//	{
+//		return this->capacity;
+//	}
+//	string getTypeOfSport()
+//	{
+//		return this->typeOfSport;
+//	}
+//};
+//
+//int main()
+//{
+//	Stadium arena1("name1", "addres1", 40000, "football");
+//	Stadium arena2("name2", "addres2", 70000, "hockey");
+//	Stadium arena3("name3", "addres3", 45000, "basketball");
+//
+//	ofstream file("stadium.txt");
+//	vector<Stadium> vector = { arena1, arena2, arena3 };
+//
+//	for (int i = 0; i < vector.size(); ++i)
+//	{
+//		file << "Name: " << vector[i].getName() << endl
+//			<< "Addres: " << vector[i].getAddres() << endl
+//			<< "Capacity: " << vector[i].getCapacity() << endl
+//			<< "Type of sport: " << vector[i].getTypeOfSport() << endl << endl;
+//	}
+//
+//	file.close();
+//
+//	ifstream readFile("stadium.txt");
+//	string line;
+//
+//	while (getline(readFile, line))
+//		cout << line << endl;
+// 
+//	readFile.close();
+//}
+
+
+
+
+//24.Создайте файл из элементов типа «Автомобиль» (марка, год выпуска, цена, цвет) и выведите его на экран.
+
+//class Auto
+//{
+//	string brand;
+//	int yearOfRealise;
+//	int cost;
+//	string colour;
+//public:
+//	Auto(string brand, int yearOfRealise, int cost, string colour)
+//	{
+//		this->brand = brand;
+//		this->yearOfRealise = yearOfRealise;
+//		this->cost = cost;
+//		this->colour = colour;
+//	}
+//
+//	string getBrand()
+//	{
+//		return this->brand;
+//	}
+//	int getYearOfRealise()
+//	{
+//		return this->yearOfRealise;
+//	}
+//	int getCost()
+//	{
+//		return this->cost;
+//	}
+//	string getColour()
+//	{
+//		return this->colour;
+//	}
+//};
+//
+//int main()
+//{
+//	Auto auto1("Porsche", 2023, 140000, "blue");
+//	Auto auto2("Mitsubishi", 1993, 13000, "red");
+//	Auto auto3("Volkswagen", 2004, 25000, "black");
+//
+//	vector<Auto> vector = { auto1, auto2, auto3 };
+//	ofstream file("auto.txt");
+//
+//	for (int i = 0; i < vector.size(); ++i)
+//	{
+//		cout << "Brand: " << vector[i].getBrand() << endl
+//			<< "Year of realise: " << vector[i].getYearOfRealise() << endl
+//			<< "Cost: " << vector[i].getCost() << "$" << endl
+//			<< "Colour: " << vector[i].getColour() << endl << endl;
+//	}
+//
+//	file.close();
+//
+//	ifstream readFile("auto.txt");
+//	string line;
+//
+//	while (getline(readFile, line))
+//		cout << line << endl;
+//
+//	readFile.close();
+//}
+
+
+
+
+//29.Организовать валидацию пользовательского ввода имени (не содержащего цифр), возраста 
+//(не отрицательного и не содержащего букв) и номера телефона в формате (##)-###-##-##.
+
+//int main()
+//{
+//	string name;
+//	cout << "Please, input name: "; cin >> name;
+//
+//	regex regularName("[\\D]+");
+//	regex regularAge("\\d+");
+//	regex regularTel("\\(\\d{2}\\)\\-\\d{3}\\-\\d{2}\\-\\d{2}");
+//
+//	if (regex_match(name.c_str(), regularName))
+//		cout << "Name is correct" << endl;
+//	else
+//		cout << "Name is NOT correct" << endl;
+//
+//	string age;
+//	cout << "Please, input your age: "; cin >> age;
+//	if (regex_match(age.c_str(), regularAge))
+//		cout << "Age is correct" << endl;
+//	else
+//		cout << "Age is NOT correct" << endl;
+//
+//	string tel;
+//	cout << "Please, input your tel((##)-###-##-##): "; cin >> tel;
+//	if (regex_match(tel.c_str(), regularTel))
+//		cout << "Tel is correct" << endl;
+//	else
+//		cout << "Tel is NOT correct" << endl;
+//}
+
+
+
+
+//30.Организовать валидацию пользовательского ввода ФИО (не содержащего цифр) и номера паспорта в формате @@#######.
+
+int main()
+{
+	string name;
+	string paspotNum;
+
+	regex regularName("\\D+");
+	regex regularPasportNum("([\\D\\w]{2})\\d{7}");
+
+	cout << "Input name: "; cin >> name;
+	if (regex_match(name.c_str(), regularName))
+		cout << "Name is correct" << endl;
+	else
+		cout << "Name is NOT correct" << endl;
+
+	cout << "Input pasport number: "; cin >> paspotNum;
+	if (regex_match(paspotNum.c_str(), regularPasportNum))
+		cout << "Pasport number is correct" << endl;
+	else
+		cout << "Pasport number is NOT correct" << endl;
+}

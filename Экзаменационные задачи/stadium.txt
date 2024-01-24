@@ -1,0 +1,15 @@
+Name: name1
+Addres: addres1
+Capacity: 40000
+Type of sport: football
+
+Name: name2
+Addres: addres2
+Capacity: 70000
+Type of sport: hockey
+
+Name: name3
+Addres: addres3
+Capacity: 45000
+Type of sport: basketball
+
